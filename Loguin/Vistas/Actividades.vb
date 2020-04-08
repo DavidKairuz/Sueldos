@@ -1,6 +1,16 @@
 ﻿Public Class Actividades
     Shared AccesoDatosActividad As New AccesoDatosActividad
     Shared validacion As Validar = New Validar
+
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
+
     Private Sub Actividades_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarActividad()
         MostrarCategoria()
@@ -46,6 +56,10 @@
         End Try
 
 
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        'txtfecha.Text = DateTime.Now.ToString("dd/MM/yyyy")
     End Sub
 
     'Function prueba(txt As String, e As EventArgs) As String

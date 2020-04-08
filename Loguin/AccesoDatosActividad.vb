@@ -17,9 +17,9 @@
 
     Shared Sub MostrarGridActividad(grid As DataGridView)
         Dim dato = (From s In ctx.Actividad
-                    Select Descripcion = s.descripcion, s.valor, Jornada = s.Unidad.descripcion).ToList
+                    Select Actividad = s.descripcion, s.valor).ToList
         grid.DataSource = dato
-        grid.Columns(0).Visible = False
+        '  grid.Columns(0).Visible = False
 
     End Sub
 

@@ -42,6 +42,7 @@ Partial Class Actividades
         Me.btnir = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.dgvactividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmseliminar.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -66,6 +67,10 @@ Partial Class Actividades
         '
         'dgvactividad
         '
+        Me.dgvactividad.AllowUserToAddRows = False
+        Me.dgvactividad.AllowUserToDeleteRows = False
+        Me.dgvactividad.AllowUserToResizeColumns = False
+        Me.dgvactividad.AllowUserToResizeRows = False
         Me.dgvactividad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvactividad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvactividad.Location = New System.Drawing.Point(347, 103)
@@ -221,6 +226,9 @@ Partial Class Actividades
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Acciones"
         '
+        'Timer1
+        '
+        '
         'Actividades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -264,4 +272,5 @@ Partial Class Actividades
     Friend WithEvents btnir As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Timer1 As Timer
 End Class
