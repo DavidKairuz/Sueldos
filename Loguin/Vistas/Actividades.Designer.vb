@@ -27,18 +27,18 @@ Partial Class Actividades
         Me.txtbuscar = New System.Windows.Forms.TextBox()
         Me.dgvactividad = New System.Windows.Forms.DataGridView()
         Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.lbldetalle = New System.Windows.Forms.Label()
+        Me.lblcategoria = New System.Windows.Forms.Label()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.cbocategoria = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnagregar = New System.Windows.Forms.Button()
+        Me.btnactualizar = New System.Windows.Forms.Button()
         Me.cmseliminar = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtsbasico = New System.Windows.Forms.TextBox()
+        Me.lblmonto = New System.Windows.Forms.Label()
+        Me.txtconvenio = New System.Windows.Forms.TextBox()
+        Me.lblconvenio = New System.Windows.Forms.Label()
         Me.btnir = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -80,15 +80,15 @@ Partial Class Actividades
         Me.txtnombre.Size = New System.Drawing.Size(125, 20)
         Me.txtnombre.TabIndex = 11
         '
-        'lbldetalle
+        'lblcategoria
         '
-        Me.lbldetalle.AutoSize = True
-        Me.lbldetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbldetalle.Location = New System.Drawing.Point(21, 60)
-        Me.lbldetalle.Name = "lbldetalle"
-        Me.lbldetalle.Size = New System.Drawing.Size(76, 16)
-        Me.lbldetalle.TabIndex = 10
-        Me.lbldetalle.Text = "Categoria"
+        Me.lblcategoria.AutoSize = True
+        Me.lblcategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblcategoria.Location = New System.Drawing.Point(21, 60)
+        Me.lblcategoria.Name = "lblcategoria"
+        Me.lblcategoria.Size = New System.Drawing.Size(76, 16)
+        Me.lblcategoria.TabIndex = 10
+        Me.lblcategoria.Text = "Categoria"
         '
         'lblnombre
         '
@@ -118,23 +118,23 @@ Partial Class Actividades
         Me.cbocategoria.Size = New System.Drawing.Size(125, 21)
         Me.cbocategoria.TabIndex = 16
         '
-        'Button1
+        'btnagregar
         '
-        Me.Button1.Location = New System.Drawing.Point(41, 17)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Agregar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnagregar.Location = New System.Drawing.Point(41, 17)
+        Me.btnagregar.Name = "btnagregar"
+        Me.btnagregar.Size = New System.Drawing.Size(75, 23)
+        Me.btnagregar.TabIndex = 17
+        Me.btnagregar.Text = "Agregar"
+        Me.btnagregar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnactualizar
         '
-        Me.Button2.Location = New System.Drawing.Point(134, 17)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Actualizar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnactualizar.Location = New System.Drawing.Point(134, 17)
+        Me.btnactualizar.Name = "btnactualizar"
+        Me.btnactualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnactualizar.TabIndex = 18
+        Me.btnactualizar.Text = "Actualizar"
+        Me.btnactualizar.UseVisualStyleBackColor = True
         '
         'cmseliminar
         '
@@ -148,45 +148,46 @@ Partial Class Actividades
         Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
-        'TextBox1
+        'txtsbasico
         '
-        Me.TextBox1.Location = New System.Drawing.Point(103, 137)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(125, 20)
-        Me.TextBox1.TabIndex = 19
+        Me.txtsbasico.Enabled = False
+        Me.txtsbasico.Location = New System.Drawing.Point(103, 137)
+        Me.txtsbasico.Name = "txtsbasico"
+        Me.txtsbasico.Size = New System.Drawing.Size(125, 20)
+        Me.txtsbasico.TabIndex = 19
         '
-        'Label1
+        'lblmonto
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(8, 138)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 16)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Monto base"
+        Me.lblmonto.AutoSize = True
+        Me.lblmonto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblmonto.Location = New System.Drawing.Point(8, 138)
+        Me.lblmonto.Name = "lblmonto"
+        Me.lblmonto.Size = New System.Drawing.Size(89, 16)
+        Me.lblmonto.TabIndex = 20
+        Me.lblmonto.Text = "Monto base"
         '
-        'TextBox2
+        'txtconvenio
         '
-        Me.TextBox2.Location = New System.Drawing.Point(103, 99)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(125, 20)
-        Me.TextBox2.TabIndex = 21
+        Me.txtconvenio.Location = New System.Drawing.Point(103, 99)
+        Me.txtconvenio.Name = "txtconvenio"
+        Me.txtconvenio.Size = New System.Drawing.Size(125, 20)
+        Me.txtconvenio.TabIndex = 21
         '
-        'Label2
+        'lblconvenio
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 99)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(73, 16)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Convenio"
+        Me.lblconvenio.AutoSize = True
+        Me.lblconvenio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblconvenio.Location = New System.Drawing.Point(24, 99)
+        Me.lblconvenio.Name = "lblconvenio"
+        Me.lblconvenio.Size = New System.Drawing.Size(73, 16)
+        Me.lblconvenio.TabIndex = 22
+        Me.lblconvenio.Text = "Convenio"
         '
         'btnir
         '
-        Me.btnir.Location = New System.Drawing.Point(234, 99)
+        Me.btnir.Location = New System.Drawing.Point(236, 99)
         Me.btnir.Name = "btnir"
-        Me.btnir.Size = New System.Drawing.Size(26, 23)
+        Me.btnir.Size = New System.Drawing.Size(26, 20)
         Me.btnir.TabIndex = 23
         Me.btnir.Text = "Ir"
         Me.btnir.UseVisualStyleBackColor = True
@@ -194,13 +195,13 @@ Partial Class Actividades
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btnir)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.lblconvenio)
+        Me.GroupBox1.Controls.Add(Me.txtconvenio)
+        Me.GroupBox1.Controls.Add(Me.lblmonto)
+        Me.GroupBox1.Controls.Add(Me.txtsbasico)
         Me.GroupBox1.Controls.Add(Me.cbocategoria)
         Me.GroupBox1.Controls.Add(Me.txtnombre)
-        Me.GroupBox1.Controls.Add(Me.lbldetalle)
+        Me.GroupBox1.Controls.Add(Me.lblcategoria)
         Me.GroupBox1.Controls.Add(Me.lblnombre)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 61)
         Me.GroupBox1.Name = "GroupBox1"
@@ -211,8 +212,8 @@ Partial Class Actividades
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.btnactualizar)
+        Me.GroupBox2.Controls.Add(Me.btnagregar)
         Me.GroupBox2.Location = New System.Drawing.Point(35, 273)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(277, 73)
@@ -248,18 +249,18 @@ Partial Class Actividades
     Friend WithEvents txtbuscar As System.Windows.Forms.TextBox
     Friend WithEvents dgvactividad As System.Windows.Forms.DataGridView
     Friend WithEvents txtnombre As System.Windows.Forms.TextBox
-    Friend WithEvents lbldetalle As System.Windows.Forms.Label
+    Friend WithEvents lblcategoria As System.Windows.Forms.Label
     Friend WithEvents lblnombre As System.Windows.Forms.Label
     Friend WithEvents lbltitulo As System.Windows.Forms.Label
     Friend WithEvents cbocategoria As System.Windows.Forms.ComboBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnagregar As Button
+    Friend WithEvents btnactualizar As Button
     Friend WithEvents cmseliminar As ContextMenuStrip
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label2 As Label
+    Friend WithEvents txtsbasico As TextBox
+    Friend WithEvents lblmonto As Label
+    Friend WithEvents txtconvenio As TextBox
+    Friend WithEvents lblconvenio As Label
     Friend WithEvents btnir As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox

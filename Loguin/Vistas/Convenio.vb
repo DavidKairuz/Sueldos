@@ -1,5 +1,7 @@
 ﻿Public Class Convenio
     Shared AccesoDatosConvenio As New AccesoDatosConvenio
+    Shared validacion As Validar = New Validar
+
     Private Sub Convenio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrarDatos()
     End Sub
@@ -95,15 +97,23 @@
 
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles chktodo.CheckedChanged
-        'If (chktodo.Checked = True) Then
-        '    AccesoDatosConvenio.MostrarTodoGridConvenio(dgvconvenio)
-        '    MsgBox("si")
-        'Else
-        '    AccesoDatosConvenio.MostrarGridConvenio(dgvconvenio)
-        '    MsgBox("no")
-        'End If
-        'End
+
+    'mueve datos de convenio a actividades validando existan datos
+    Private Sub dgvconvenio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvconvenio.CellDoubleClick
+
+        Try
+            If Not (validacion.DatagridVacio(dgvconvenio)) Then
+                Actividades.txtconvenio.Text = dgvconvenio.CurrentRow().Cells(1).Value
+                Me.Close()
+
+            Else
+                MsgBox("No hay datos que asignar", MsgBoxStyle.Exclamation, "")
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Me.Close()
+        End Try
 
     End Sub
 

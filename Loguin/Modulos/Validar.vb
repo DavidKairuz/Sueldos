@@ -129,4 +129,15 @@ Public Class Validar
     End Sub
 
 
+
+    Public Function DatagridVacio(dg As DataGridView) As Boolean
+        Dim resp As Boolean
+        If dg.Rows.Count = 0 Then
+            resp = True
+        Else
+            resp = False
+        End If
+        Return resp
+    End Function
+
 End Class
