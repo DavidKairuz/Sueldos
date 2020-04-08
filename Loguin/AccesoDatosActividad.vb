@@ -9,7 +9,7 @@
 
         combo.DataSource = dato
         combo.DisplayMember = "descripcion"
-        combo.ValueMember = "id_categoriaAct"
+        combo.ValueMember = "id_categoria"
         combo.SelectedValue = -1
 
     End Sub
@@ -17,7 +17,7 @@
 
     Shared Sub MostrarGridActividad(grid As DataGridView)
         Dim dato = (From s In ctx.Actividad
-                    Select s).ToList
+                    Select Descripcion = s.descripcion, s.valor, Jornada = s.Unidad.descripcion).ToList
         grid.DataSource = dato
         grid.Columns(0).Visible = False
 
