@@ -1,5 +1,5 @@
 ﻿Public Class AccesoDatosConcepto
-    Shared ctx As New LiquidacionSueldosEntities1
+    Shared ctx As New LiquidSueldosEntities
 
 
 

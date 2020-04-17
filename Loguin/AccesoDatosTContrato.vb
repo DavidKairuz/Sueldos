@@ -1,5 +1,5 @@
 ﻿Public Class AccesoDatosTContrato
-    Shared ctx As New LiquidacionSueldosEntities1
+    Shared ctx As New LiquidSueldosEntities
     ' Dim Tc = New Tipo_Contrato()
 
     Shared Sub mostrartipocontrato(grid As DataGridView)

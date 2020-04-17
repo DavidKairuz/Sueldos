@@ -10,11 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class Convenio
+Partial Public Class CategoriaC
     Public Property id_convenio As Integer
-    Public Property descripcion As String
+    Public Property id_categoria As Integer
     Public Property estadobaja As Nullable(Of Boolean)
+    Public Property descripcion As String
+    Public Property basico As Nullable(Of Decimal)
 
-    Public Overridable Property CategoriaC As ICollection(Of CategoriaC) = New HashSet(Of CategoriaC)
+    Public Overridable Property Actividad As ICollection(Of Actividad) = New HashSet(Of Actividad)
+    Public Overridable Property Convenio As Convenio
 
 End Class

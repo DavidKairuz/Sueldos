@@ -26,12 +26,13 @@ Partial Public Class Empleado
     Public Property empresa As Nullable(Of Integer)
     Public Property antiguedad As Nullable(Of Integer)
     Public Property estadobaja As Nullable(Of Boolean)
-    Public Property id_categoria As Nullable(Of Integer)
     Public Property id_actividad As Nullable(Of Integer)
+    Public Property obras As Nullable(Of Integer)
 
     Public Overridable Property Actividad As Actividad
     Public Overridable Property Empresa1 As Empresa
     Public Overridable Property Estado_Civil1 As Estado_Civil
+    Public Overridable Property Obra_Social As Obra_Social
     Public Overridable Property Sueldo_Cab As ICollection(Of Sueldo_Cab) = New HashSet(Of Sueldo_Cab)
 
 End Class

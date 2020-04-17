@@ -90,43 +90,46 @@
     <Compile Include="AccesoDatosSueldo.vb" />
     <Compile Include="AccesoDatosTContrato.vb" />
     <Compile Include="Actividad.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Banco.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CategoriaA.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriaC.vb">
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Concepto.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Contrato.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Convenio.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empleado.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Empresa.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Empresa_Sucursal.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="EntidadBanco.vb" />
     <Compile Include="Estado_Civil.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Localidad.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Loguin.vb">
       <SubType>Form</SubType>
@@ -134,6 +137,21 @@
     <Compile Include="Loguin.Designer.vb">
       <DependentUpon>Loguin.vb</DependentUpon>
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDB.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MDB.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo.Context.vb">
       <AutoGen>True</AutoGen>
@@ -182,33 +200,39 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Negocio.vb" />
+    <Compile Include="Obra_Social.vb">
+      <DependentUpon>MDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Periodo.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Provincia.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Razon_Social.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Remuneraciones.vb">
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Rol.vb">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Sueldo_Cab.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Sueldo_Det.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_Concepto.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_Contrato.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Unidad.vb">
-      <DependentUpon>ModelSueldoLiquidacion.tt</DependentUpon>
+      <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.vb">
       <DependentUpon>Modelo.tt</DependentUpon>
@@ -320,6 +344,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Modelo.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="MDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MDB.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MDB.edmx.diagram">
+      <DependentUpon>MDB.edmx</DependentUpon>
+    </None>
     <None Include="Modelo.edmx.diagram">
       <DependentUpon>Modelo.edmx</DependentUpon>
     </None>
@@ -343,6 +374,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MDB.edmx</DependentUpon>
+      <LastGenOutput>MDB.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="MDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MDB.edmx</DependentUpon>
+      <LastGenOutput>MDB.vb</LastGenOutput>
+    </Content>
     <Content Include="Modelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Modelo.edmx</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿Public Class AccesoDatosPeriodo
 
-    Shared ctx As New LiquidacionSueldosEntities1
+    Shared ctx As New LiquidSueldosEntities
     Shared Sub MostrarConvenioCbo(combo As ComboBox)
         Dim per = (From e In ctx.Periodo
                    Select e).ToList

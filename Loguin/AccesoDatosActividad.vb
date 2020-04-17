@@ -1,5 +1,5 @@
 ﻿Public Class AccesoDatosActividad
-    Shared ctx As New LiquidacionSueldosEntities1
+    Shared ctx As New LiquidSueldosEntities
 
 
 
@@ -17,7 +17,7 @@
 
     Shared Sub MostrarGridActividad(grid As DataGridView)
         Dim dato = (From s In ctx.Actividad
-                    Select Actividad = s.descripcion, s.valor).ToList
+                    Select Actividad = s.descripcion, s.descripcion).ToList
         grid.DataSource = dato
         '  grid.Columns(0).Visible = False
 

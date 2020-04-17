@@ -11,12 +11,10 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class CategoriaA
-    Public Property id_categoria As Integer
-    Public Property id_actividad As Integer
+    Public Property id_categoriaa As Integer
     Public Property descripcion As String
-    Public Property detalle As String
     Public Property estadobaja As Nullable(Of Boolean)
 
-    Public Overridable Property Actividad As Actividad
+    Public Overridable Property Actividad As ICollection(Of Actividad) = New HashSet(Of Actividad)
 
 End Class

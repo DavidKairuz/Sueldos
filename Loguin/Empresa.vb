@@ -14,7 +14,6 @@ Partial Public Class Empresa
     Public Property id_empresa As Integer
     Public Property nombrefantasia As String
     Public Property direccion As String
-    Public Property razon_social As String
     Public Property telefono As String
     Public Property cuitEmp As String
     Public Property provincia As Nullable(Of Integer)
@@ -23,7 +22,7 @@ Partial Public Class Empresa
 
     Public Overridable Property Empleado As ICollection(Of Empleado) = New HashSet(Of Empleado)
     Public Overridable Property Provincia1 As Provincia
-    Public Overridable Property Razon_Social1 As Razon_Social
+    Public Overridable Property Razon_Social As Razon_Social
     Public Overridable Property Empresa_Sucursal As ICollection(Of Empresa_Sucursal) = New HashSet(Of Empresa_Sucursal)
 
 End Class

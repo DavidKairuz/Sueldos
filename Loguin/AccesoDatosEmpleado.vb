@@ -1,6 +1,6 @@
 ﻿Public Class AccesoDatosEmpleado
 
-    Shared ctx As New LiquidacionSueldosEntities1
+    Shared ctx As New LiquidSueldosEntities
 
     Shared Sub MostrarEstadoCivil(combo As ComboBox)
         Dim dato = (From e In ctx.Estado_Civil

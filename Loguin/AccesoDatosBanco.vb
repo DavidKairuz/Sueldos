@@ -1,6 +1,6 @@
 ﻿Public Class AccesoDatosBanco
 
-    Shared ctx As New LiquidacionSueldosEntities1
+    Shared ctx As New LiquidSueldosEntities
 
     Shared Sub MostrarBancosGrid(grid As DataGridView)
 

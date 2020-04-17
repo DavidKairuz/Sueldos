@@ -13,7 +13,7 @@ Imports System.Collections.Generic
 Partial Public Class Tipo_Concepto
     Public Property id_tipoConcepto As Integer
     Public Property descripcion As String
-    Public Property Estado_Rem_NoRem As String
+    Public Property estado_R_NRm As Nullable(Of Boolean)
     Public Property estadobaja As Nullable(Of Boolean)
 
     Public Overridable Property Concepto As ICollection(Of Concepto) = New HashSet(Of Concepto)
