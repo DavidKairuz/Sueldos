@@ -9,7 +9,7 @@
 
         combo.DataSource = dato
         combo.DisplayMember = "descripcion"
-        combo.ValueMember = "id_categoria"
+        combo.ValueMember = "id_categoriaa"
         combo.SelectedValue = -1
 
     End Sub

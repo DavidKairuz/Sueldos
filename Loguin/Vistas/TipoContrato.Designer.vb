@@ -36,9 +36,13 @@ Partial Class TipoContrato
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.txtcod = New System.Windows.Forms.TextBox()
+        Me.lblcod = New System.Windows.Forms.Label()
+        Me.gbdatos = New System.Windows.Forms.GroupBox()
         CType(Me.dgvtipo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmseliminar.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.gbdatos.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvtipo
@@ -52,26 +56,26 @@ Partial Class TipoContrato
         '
         'btnagregar
         '
-        Me.btnagregar.Location = New System.Drawing.Point(46, 17)
+        Me.btnagregar.Location = New System.Drawing.Point(26, 29)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(64, 22)
-        Me.btnagregar.TabIndex = 1
+        Me.btnagregar.TabIndex = 4
         Me.btnagregar.Text = "Agregar"
         Me.btnagregar.UseVisualStyleBackColor = True
         '
         'btnactualizar
         '
-        Me.btnactualizar.Location = New System.Drawing.Point(130, 17)
+        Me.btnactualizar.Location = New System.Drawing.Point(112, 31)
         Me.btnactualizar.Name = "btnactualizar"
-        Me.btnactualizar.Size = New System.Drawing.Size(75, 23)
-        Me.btnactualizar.TabIndex = 2
+        Me.btnactualizar.Size = New System.Drawing.Size(75, 22)
+        Me.btnactualizar.TabIndex = 5
         Me.btnactualizar.Text = "Actualizar"
         Me.btnactualizar.UseVisualStyleBackColor = True
         '
         'lblnombre
         '
         Me.lblnombre.AutoSize = True
-        Me.lblnombre.Location = New System.Drawing.Point(42, 49)
+        Me.lblnombre.Location = New System.Drawing.Point(15, 70)
         Me.lblnombre.Name = "lblnombre"
         Me.lblnombre.Size = New System.Drawing.Size(44, 13)
         Me.lblnombre.TabIndex = 3
@@ -79,10 +83,10 @@ Partial Class TipoContrato
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(45, 65)
+        Me.txtdescripcion.Location = New System.Drawing.Point(65, 67)
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(199, 20)
-        Me.txtdescripcion.TabIndex = 7
+        Me.txtdescripcion.TabIndex = 2
         '
         'cmseliminar
         '
@@ -108,10 +112,10 @@ Partial Class TipoContrato
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(230, 18)
+        Me.btneliminar.Location = New System.Drawing.Point(209, 30)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(64, 22)
-        Me.btneliminar.TabIndex = 11
+        Me.btneliminar.TabIndex = 6
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = True
         '
@@ -120,7 +124,7 @@ Partial Class TipoContrato
         Me.TextBox1.Location = New System.Drawing.Point(517, 72)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(131, 20)
-        Me.TextBox1.TabIndex = 12
+        Me.TextBox1.TabIndex = 3
         '
         'Label2
         '
@@ -136,9 +140,9 @@ Partial Class TipoContrato
         Me.GroupBox1.Controls.Add(Me.btneliminar)
         Me.GroupBox1.Controls.Add(Me.btnactualizar)
         Me.GroupBox1.Controls.Add(Me.btnagregar)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 134)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 258)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(327, 63)
+        Me.GroupBox1.Size = New System.Drawing.Size(305, 71)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Acciones"
@@ -146,12 +150,43 @@ Partial Class TipoContrato
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(375, 71)
+        Me.CheckBox1.Location = New System.Drawing.Point(362, 75)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(89, 17)
         Me.CheckBox1.TabIndex = 15
         Me.CheckBox1.Text = "Mostrar Todo"
         Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'txtcod
+        '
+        Me.txtcod.Enabled = False
+        Me.txtcod.Location = New System.Drawing.Point(65, 29)
+        Me.txtcod.MaxLength = 20
+        Me.txtcod.Name = "txtcod"
+        Me.txtcod.Size = New System.Drawing.Size(79, 20)
+        Me.txtcod.TabIndex = 1
+        '
+        'lblcod
+        '
+        Me.lblcod.AutoSize = True
+        Me.lblcod.Location = New System.Drawing.Point(15, 32)
+        Me.lblcod.Name = "lblcod"
+        Me.lblcod.Size = New System.Drawing.Size(40, 13)
+        Me.lblcod.TabIndex = 16
+        Me.lblcod.Text = "Codigo"
+        '
+        'gbdatos
+        '
+        Me.gbdatos.Controls.Add(Me.txtcod)
+        Me.gbdatos.Controls.Add(Me.lblcod)
+        Me.gbdatos.Controls.Add(Me.txtdescripcion)
+        Me.gbdatos.Controls.Add(Me.lblnombre)
+        Me.gbdatos.Location = New System.Drawing.Point(12, 88)
+        Me.gbdatos.Name = "gbdatos"
+        Me.gbdatos.Size = New System.Drawing.Size(316, 130)
+        Me.gbdatos.TabIndex = 18
+        Me.gbdatos.TabStop = False
+        Me.gbdatos.Text = "Datos"
         '
         'TipoContrato
         '
@@ -159,19 +194,20 @@ Partial Class TipoContrato
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(685, 449)
         Me.ContextMenuStrip = Me.cmseliminar
+        Me.Controls.Add(Me.gbdatos)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lbltitulo)
-        Me.Controls.Add(Me.txtdescripcion)
-        Me.Controls.Add(Me.lblnombre)
         Me.Controls.Add(Me.dgvtipo)
         Me.Name = "TipoContrato"
         Me.Text = "TipoContrato"
         CType(Me.dgvtipo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cmseliminar.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
+        Me.gbdatos.ResumeLayout(False)
+        Me.gbdatos.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -190,4 +226,7 @@ Partial Class TipoContrato
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents txtcod As TextBox
+    Friend WithEvents lblcod As Label
+    Friend WithEvents gbdatos As GroupBox
 End Class
