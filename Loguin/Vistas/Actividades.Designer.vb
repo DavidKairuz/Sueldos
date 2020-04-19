@@ -43,6 +43,7 @@ Partial Class Actividades
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.cbocatcon = New System.Windows.Forms.ComboBox()
         CType(Me.dgvactividad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmseliminar.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -89,7 +90,7 @@ Partial Class Actividades
         '
         Me.lblcategoria.AutoSize = True
         Me.lblcategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblcategoria.Location = New System.Drawing.Point(21, 60)
+        Me.lblcategoria.Location = New System.Drawing.Point(21, 97)
         Me.lblcategoria.Name = "lblcategoria"
         Me.lblcategoria.Size = New System.Drawing.Size(76, 16)
         Me.lblcategoria.TabIndex = 10
@@ -118,14 +119,14 @@ Partial Class Actividades
         'cbocategoria
         '
         Me.cbocategoria.FormattingEnabled = True
-        Me.cbocategoria.Location = New System.Drawing.Point(103, 60)
+        Me.cbocategoria.Location = New System.Drawing.Point(236, 21)
         Me.cbocategoria.Name = "cbocategoria"
-        Me.cbocategoria.Size = New System.Drawing.Size(125, 21)
+        Me.cbocategoria.Size = New System.Drawing.Size(40, 21)
         Me.cbocategoria.TabIndex = 16
         '
         'btnagregar
         '
-        Me.btnagregar.Location = New System.Drawing.Point(41, 17)
+        Me.btnagregar.Location = New System.Drawing.Point(49, 29)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(75, 23)
         Me.btnagregar.TabIndex = 17
@@ -134,7 +135,7 @@ Partial Class Actividades
         '
         'btnactualizar
         '
-        Me.btnactualizar.Location = New System.Drawing.Point(134, 17)
+        Me.btnactualizar.Location = New System.Drawing.Point(142, 29)
         Me.btnactualizar.Name = "btnactualizar"
         Me.btnactualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnactualizar.TabIndex = 18
@@ -160,6 +161,7 @@ Partial Class Actividades
         Me.txtsbasico.Name = "txtsbasico"
         Me.txtsbasico.Size = New System.Drawing.Size(125, 20)
         Me.txtsbasico.TabIndex = 19
+        Me.txtsbasico.Visible = False
         '
         'lblmonto
         '
@@ -170,10 +172,11 @@ Partial Class Actividades
         Me.lblmonto.Size = New System.Drawing.Size(89, 16)
         Me.lblmonto.TabIndex = 20
         Me.lblmonto.Text = "Monto base"
+        Me.lblmonto.Visible = False
         '
         'txtconvenio
         '
-        Me.txtconvenio.Location = New System.Drawing.Point(103, 99)
+        Me.txtconvenio.Location = New System.Drawing.Point(103, 60)
         Me.txtconvenio.Name = "txtconvenio"
         Me.txtconvenio.Size = New System.Drawing.Size(125, 20)
         Me.txtconvenio.TabIndex = 21
@@ -182,7 +185,7 @@ Partial Class Actividades
         '
         Me.lblconvenio.AutoSize = True
         Me.lblconvenio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblconvenio.Location = New System.Drawing.Point(24, 99)
+        Me.lblconvenio.Location = New System.Drawing.Point(24, 61)
         Me.lblconvenio.Name = "lblconvenio"
         Me.lblconvenio.Size = New System.Drawing.Size(73, 16)
         Me.lblconvenio.TabIndex = 22
@@ -190,7 +193,7 @@ Partial Class Actividades
         '
         'btnir
         '
-        Me.btnir.Location = New System.Drawing.Point(236, 99)
+        Me.btnir.Location = New System.Drawing.Point(250, 60)
         Me.btnir.Name = "btnir"
         Me.btnir.Size = New System.Drawing.Size(26, 20)
         Me.btnir.TabIndex = 23
@@ -199,6 +202,7 @@ Partial Class Actividades
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbocatcon)
         Me.GroupBox1.Controls.Add(Me.btnir)
         Me.GroupBox1.Controls.Add(Me.lblconvenio)
         Me.GroupBox1.Controls.Add(Me.txtconvenio)
@@ -210,7 +214,7 @@ Partial Class Actividades
         Me.GroupBox1.Controls.Add(Me.lblnombre)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 61)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(297, 202)
+        Me.GroupBox1.Size = New System.Drawing.Size(297, 175)
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
@@ -219,7 +223,7 @@ Partial Class Actividades
         '
         Me.GroupBox2.Controls.Add(Me.btnactualizar)
         Me.GroupBox2.Controls.Add(Me.btnagregar)
-        Me.GroupBox2.Location = New System.Drawing.Point(35, 273)
+        Me.GroupBox2.Location = New System.Drawing.Point(36, 313)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(277, 73)
         Me.GroupBox2.TabIndex = 25
@@ -228,6 +232,15 @@ Partial Class Actividades
         '
         'Timer1
         '
+        '
+        'cbocatcon
+        '
+        Me.cbocatcon.Enabled = False
+        Me.cbocatcon.FormattingEnabled = True
+        Me.cbocatcon.Location = New System.Drawing.Point(103, 96)
+        Me.cbocatcon.Name = "cbocatcon"
+        Me.cbocatcon.Size = New System.Drawing.Size(121, 21)
+        Me.cbocatcon.TabIndex = 24
         '
         'Actividades
         '
@@ -273,4 +286,5 @@ Partial Class Actividades
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents cbocatcon As ComboBox
 End Class

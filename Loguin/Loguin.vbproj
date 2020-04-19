@@ -86,10 +86,12 @@
     <Compile Include="AccesoDatosConcepto.vb" />
     <Compile Include="AccesoDatosConvenio.vb" />
     <Compile Include="AccesoDatosEmpleado.vb" />
+    <Compile Include="AccesoDatosLocalidad.vb" />
     <Compile Include="AccesoDatosPeriodo.vb" />
     <Compile Include="AccesoDatosSueldo.vb" />
     <Compile Include="AccesoDatosTContrato.vb" />
     <Compile Include="AccesoDatosTipoConcepto.vb" />
+    <Compile Include="AccesoDatosUnidad.vb" />
     <Compile Include="Actividad.vb">
       <DependentUpon>MDB.tt</DependentUpon>
     </Compile>
@@ -250,6 +252,12 @@
     <Compile Include="Vistas\Banco.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vistas\Component1.Designer.vb">
+      <DependentUpon>Component1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Component1.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Vistas\Concepto.Designer.vb">
       <DependentUpon>Concepto.vb</DependentUpon>
     </Compile>
@@ -274,6 +282,18 @@
     <Compile Include="Vistas\Empresa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vistas\Localidades.Designer.vb">
+      <DependentUpon>Localidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Localidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ObraSocial.Designer.vb">
+      <DependentUpon>ObraSocial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ObraSocial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vistas\Periodo.Designer.vb">
       <DependentUpon>Periodo.vb</DependentUpon>
     </Compile>
@@ -296,6 +316,12 @@
       <DependentUpon>TipoContrato.vb</DependentUpon>
     </Compile>
     <Compile Include="Vistas\TipoContrato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Unidades.Designer.vb">
+      <DependentUpon>Unidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Unidades.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\VEmpleados.Designer.vb">
@@ -333,6 +359,12 @@
     <EmbeddedResource Include="Vistas\Empresa.resx">
       <DependentUpon>Empresa.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Localidades.resx">
+      <DependentUpon>Localidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ObraSocial.resx">
+      <DependentUpon>ObraSocial.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Periodo.resx">
       <DependentUpon>Periodo.vb</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\TipoContrato.resx">
       <DependentUpon>TipoContrato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Unidades.resx">
+      <DependentUpon>Unidades.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VEmpleados.resx">
       <DependentUpon>VEmpleados.vb</DependentUpon>

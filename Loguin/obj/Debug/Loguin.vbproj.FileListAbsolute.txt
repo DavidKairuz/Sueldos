@@ -21,3 +21,4 @@ C:\Users\david\Documents\Visual Studio 2015\Projects\ProjectoSueldo\Loguin\obj\D
 C:\Users\david\Documents\Visual Studio 2015\Projects\ProjectoSueldo\Loguin\obj\Debug\Loguin.pdb
 C:\Users\david\Documents\Visual Studio 2015\Projects\ProjectoSueldo\Loguin\obj\Debug\Loguin.vbprojResolveAssemblyReference.cache
 C:\Users\david\Documents\Visual Studio 2015\Projects\ProjectoSueldo\Loguin\obj\Debug\Loguin.ReciboSueldo.resources
+C:\Users\david\documents\visual studio 2015\Projects\ProjectoSueldo\Loguin\obj\Debug\Loguin.TipoConcepto.resources

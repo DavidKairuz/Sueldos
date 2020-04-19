@@ -16,36 +16,35 @@
     End Sub
 
 
-    Function vacio() As Boolean
-        Dim result As Boolean = False
-        If (txtdescripcion.Text.Trim = "") Then
-            result = True
+    'Function vacio() As Boolean
+    '    Dim result As Boolean = False
+    '    If (txtdescripcion.Text.Trim = "") Then
+    '        result = True
 
-        Else
-            result = False
-        End If
-        Return result
-    End Function
+    '    Else
+    '        result = False
+    '    End If
+    '    Return result
+    'End Function
 
 
     Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
 
 
-        If vacio() = True Then
+        If validacion.vacio(txtdescripcion) = True Then
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Information, "Aviso")
             txtdescripcion.Focus()
         Else
 
             If (AccesoDatosConvenio.Existe(txtdescripcion.Text) = False) Then
 
-
                 If MsgBox("Seguro agregar este convenio?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
                     AccesoDatosConvenio.AgregarConvenio(New Convenio() With
-            {
-            .descripcion = txtdescripcion.Text,
-            .estadobaja = 0
-            })
+                                    {
+                                    .descripcion = txtdescripcion.Text,
+                                    .estadobaja = 0
+                                    })
 
                     AccesoDatosConvenio.MostrarGridConvenio(dgvconvenio)
                     limpiar()
@@ -56,15 +55,12 @@
                     limpiar()
                 End If
 
-
             Else
                 MsgBox("Ya existe un registro con este nombre", MsgBoxStyle.Exclamation, "Alerta")
-                    limpiar()
-
-                End If
-
+                limpiar()
             End If
 
+            End If
 
     End Sub
 
@@ -73,21 +69,46 @@
     End Sub
 
     Private Sub btnactualizar_Click(sender As Object, e As EventArgs) Handles btnactualizar.Click
-        Dim ide = dgvconvenio.CurrentRow().Cells(0).Value
-        Dim nom = txtdescripcion.Text
-        AccesoDatosConvenio.ActualizarConvenio(ide, nom)
+
+        Try
+            If validacion.DatagridVacio(dgvconvenio) = True Then
+                MsgBox("No hay registros para actualizar", MsgBoxStyle.Exclamation, "Atencion")
+            Else
+
+                Dim ide = dgvconvenio.CurrentRow().Cells(0).Value
+                Dim nom = txtdescripcion.Text
+                AccesoDatosConvenio.ActualizarConvenio(ide, nom)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        If MsgBox("Seguro desea Eliminar este Convenio?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
 
-            Dim ide = dgvconvenio.CurrentRow().Cells(0).Value
-            AccesoDatosConvenio.EliminarConvenio(ide)
-            AccesoDatosConvenio.MostrarGridConvenio(dgvconvenio)
-        Else
-            MsgBox("")
+        Try
 
-        End If
+            If validacion.DatagridVacio(dgvconvenio) = True Then
+                MsgBox("No hay registros para eliminar", MsgBoxStyle.Exclamation, "Atencion")
+            Else
+                If MsgBox("Seguro desea Eliminar este Convenio?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+
+                    Dim ide = dgvconvenio.CurrentRow().Cells(0).Value
+                    AccesoDatosConvenio.EliminarConvenio(ide)
+                    AccesoDatosConvenio.MostrarGridConvenio(dgvconvenio)
+                    MsgBox("Convenio Eliminado con exito", MsgBoxStyle.Information, "Eliminacion")
+                Else
+                    MsgBox("Operacion cancelada", MsgBoxStyle.Critical, "Cancelacion")
+
+                End If
+
+            End If
+        Catch ex As Exception
+
+        End Try
+
+
     End Sub
 
     Private Sub dgvconvenio_Click(sender As Object, e As EventArgs) Handles dgvconvenio.Click
@@ -116,5 +137,7 @@
         End Try
 
     End Sub
+
+
 
 End Class

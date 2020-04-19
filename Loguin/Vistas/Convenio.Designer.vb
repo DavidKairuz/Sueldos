@@ -32,7 +32,13 @@ Partial Class Convenio
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.chktodo = New System.Windows.Forms.CheckBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtcod = New System.Windows.Forms.TextBox()
+        Me.lblcodigo = New System.Windows.Forms.Label()
         CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbltitulo
@@ -48,7 +54,7 @@ Partial Class Convenio
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(66, 68)
+        Me.Label2.Location = New System.Drawing.Point(39, 62)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 2
@@ -56,7 +62,7 @@ Partial Class Convenio
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(121, 65)
+        Me.txtdescripcion.Location = New System.Drawing.Point(100, 62)
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.Size = New System.Drawing.Size(180, 20)
         Me.txtdescripcion.TabIndex = 9
@@ -75,7 +81,7 @@ Partial Class Convenio
         '
         'btnagregar
         '
-        Me.btnagregar.Location = New System.Drawing.Point(92, 132)
+        Me.btnagregar.Location = New System.Drawing.Point(19, 35)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(75, 23)
         Me.btnagregar.TabIndex = 14
@@ -84,7 +90,7 @@ Partial Class Convenio
         '
         'btnactualizar
         '
-        Me.btnactualizar.Location = New System.Drawing.Point(182, 132)
+        Me.btnactualizar.Location = New System.Drawing.Point(109, 35)
         Me.btnactualizar.Name = "btnactualizar"
         Me.btnactualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnactualizar.TabIndex = 15
@@ -111,7 +117,7 @@ Partial Class Convenio
         '
         'btneliminar
         '
-        Me.btneliminar.Location = New System.Drawing.Point(266, 132)
+        Me.btneliminar.Location = New System.Drawing.Point(193, 35)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(75, 23)
         Me.btneliminar.TabIndex = 16
@@ -130,24 +136,65 @@ Partial Class Convenio
         Me.chktodo.Text = "Mostrar Todo"
         Me.chktodo.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.btnactualizar)
+        Me.GroupBox1.Controls.Add(Me.btnagregar)
+        Me.GroupBox1.Controls.Add(Me.btneliminar)
+        Me.GroupBox1.Location = New System.Drawing.Point(47, 178)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(297, 100)
+        Me.GroupBox1.TabIndex = 18
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Acciones"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtcod)
+        Me.GroupBox2.Controls.Add(Me.lblcodigo)
+        Me.GroupBox2.Controls.Add(Me.txtdescripcion)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Location = New System.Drawing.Point(24, 39)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(339, 109)
+        Me.GroupBox2.TabIndex = 19
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Datos"
+        '
+        'txtcod
+        '
+        Me.txtcod.Location = New System.Drawing.Point(100, 16)
+        Me.txtcod.Name = "txtcod"
+        Me.txtcod.Size = New System.Drawing.Size(107, 20)
+        Me.txtcod.TabIndex = 11
+        '
+        'lblcodigo
+        '
+        Me.lblcodigo.AutoSize = True
+        Me.lblcodigo.Location = New System.Drawing.Point(41, 19)
+        Me.lblcodigo.Name = "lblcodigo"
+        Me.lblcodigo.Size = New System.Drawing.Size(40, 13)
+        Me.lblcodigo.TabIndex = 10
+        Me.lblcodigo.Text = "Codigo"
+        '
         'Convenio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(773, 479)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.chktodo)
-        Me.Controls.Add(Me.btneliminar)
-        Me.Controls.Add(Me.btnactualizar)
-        Me.Controls.Add(Me.btnagregar)
         Me.Controls.Add(Me.dgvconvenio)
-        Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.lblfiltrar)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbltitulo)
         Me.Name = "Convenio"
         Me.Text = "Convenio"
         CType(Me.dgvconvenio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -162,4 +209,8 @@ Partial Class Convenio
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents btneliminar As Button
     Friend WithEvents chktodo As CheckBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents txtcod As TextBox
+    Friend WithEvents lblcodigo As Label
 End Class

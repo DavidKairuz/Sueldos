@@ -140,4 +140,15 @@ Public Class Validar
         Return resp
     End Function
 
+
+    Function vacio(text As TextBox) As Boolean
+        Dim result As Boolean = False
+        If (text.Text.Trim = "") Then
+            result = True
+
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 End Class
