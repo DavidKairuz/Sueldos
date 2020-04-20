@@ -5,6 +5,7 @@
 
     Shared Sub MostrarTipoConcepto(combo As ComboBox)
         Dim dato = (From t In ctx.Tipo_Concepto
+                    Where t.estadobaja = 0
                     Select t.descripcion).ToList
 
         combo.DataSource = dato
@@ -48,4 +49,33 @@
         dta.DataSource = data
         dta.Columns(0).Visible = False
     End Sub
+
+
+
+
+    ''Shared Function Existe(name As String) As Boolean
+    ''    Dim result As Boolean
+    ''    If (ctx.Concepto.Any()) Then
+    ''        Dim ban = (From b In ctx.Concepto
+    ''                   Where b.descripcion Like name
+    ''                   Select b).SingleOrDefault
+    ''        result = True
+    ''    Else
+    ''        result = False
+
+    ''    End If
+
+    ''    Return result
+
+    ''End Function
+
+    Shared Function Existe(name As String) As Boolean
+        Dim result As Boolean = False
+        If ctx.Concepto.Any(Function(o) o.descripcion = name) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 End Class

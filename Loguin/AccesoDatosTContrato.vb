@@ -13,9 +13,9 @@
         ctx.SaveChanges()
     End Sub
 
-    Shared Sub EliminarTipoContrato(id As Integer, name As String)
+    Shared Sub EliminarTipoContrato(id As Integer)
         Dim tip = (From t In ctx.Tipo_Contrato
-                   Where t.id_tipoContrato = id And t.descripcion = name
+                   Where t.id_tipoContrato = id
                    Select t).SingleOrDefault
 
         tip.estadobaja = 1
@@ -34,6 +34,16 @@
         Else
             result = False
 
+        End If
+        Return result
+    End Function
+
+    Shared Function Existe(name As String) As Boolean
+        Dim result As Boolean = False
+        If ctx.Tipo_Contrato.Any(Function(o) o.descripcion = name) Then
+            result = True
+        Else
+            result = False
         End If
         Return result
     End Function

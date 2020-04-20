@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Loguin.Convenio
+            Me.MainForm = Global.Loguin.TipoContrato
         End Sub
     End Class
 End Namespace

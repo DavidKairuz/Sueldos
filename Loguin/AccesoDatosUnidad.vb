@@ -3,13 +3,20 @@
 
 
 
+
+
+    Shared Sub AgregarUnidad(unit As Unidad)
+        ctx.Unidad.Add(unit)
+        ctx.SaveChanges()
+    End Sub
+    'muestra todos los registros
     Shared Sub MostrarUnidadesT(dgv As DataGridView)
         Dim uni = (From u In ctx.Unidad
                    Select u).ToList
         dgv.DataSource = uni
 
     End Sub
-
+    'muestra los registros que estan activos
     Shared Sub MostrarUnidadesA(dgv As DataGridView)
         Dim uni = (From u In ctx.Unidad
                    Where u.estadobaja = 0
@@ -18,13 +25,7 @@
         dgv.DataSource = uni
 
     End Sub
-
-    Shared Sub AgregarUnidad(unit As Unidad)
-        ctx.Unidad.Add(unit)
-        ctx.SaveChanges()
-    End Sub
-
-
+    'baja logica
     Shared Sub EliminarUnidad(id As Integer)
         Dim uni = (From u In ctx.Unidad
                    Where u.id_unidad = id
@@ -47,6 +48,16 @@
         Dim unit = (From u In ctx.Unidad
                     Where u.descripcion Like name
                     Select u).SingleOrDefault
+    End Sub
+
+    Shared Sub ActualizarUnidad(id As Integer, name As String)
+        Dim un = (From u In ctx.Unidad
+                  Where u.id_unidad = id
+                  Select u).SingleOrDefault
+        With un
+            .descripcion = name
+        End With
+
     End Sub
 
 End Class

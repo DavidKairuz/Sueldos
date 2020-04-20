@@ -2,6 +2,13 @@
 
     Shared ctx As New LiquidSueldosEntities
 
+
+    ''Permite agregar un banco
+    Shared Sub AgregarBanco(bank As Banco)
+        ctx.Banco.Add(bank)
+        ctx.SaveChanges()
+    End Sub
+
     Shared Sub MostrarBancosGrid(grid As DataGridView)
 
 
@@ -10,18 +17,17 @@
 
         grid.DataSource = bank
         grid.Columns(0).Visible = False
-        'Catch ex As NullReferenceException
-        'MsgBox(ex.Message, MsgBoxStyle.Information, "nothing")
-
-        'End Try
-
     End Sub
 
-    ''Permite agregar un banco
-    Shared Sub AgregarBanco(bank As Banco)
-        ctx.Banco.Add(bank)
-        ctx.SaveChanges()
+    Shared Sub MostrarGridActividadA(grid As DataGridView)
+        Dim dato = (From s In ctx.Actividad
+                    Where s.estadobaja = 0
+                    Select Actividad = s.descripcion, s.descripcion).ToList
+        grid.DataSource = dato
+        '  grid.Columns(0).Visible = False
     End Sub
+
+
     ''Da de baja logica un banco
     Shared Sub EliminarBanco(id As Integer)
         Try
@@ -85,8 +91,5 @@
         Return result
 
     End Function
-
-
-
 
 End Class

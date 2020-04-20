@@ -22,7 +22,7 @@ Partial Class Unidades
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvunidades = New System.Windows.Forms.DataGridView()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.btnactualizar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -34,18 +34,18 @@ Partial Class Unidades
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.gbdatos = New System.Windows.Forms.GroupBox()
         Me.gbacciones = New System.Windows.Forms.GroupBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvunidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbdatos.SuspendLayout()
         Me.gbacciones.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dgvunidades
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(243, 78)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(240, 227)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvunidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvunidades.Location = New System.Drawing.Point(243, 78)
+        Me.dgvunidades.Name = "dgvunidades"
+        Me.dgvunidades.Size = New System.Drawing.Size(240, 227)
+        Me.dgvunidades.TabIndex = 0
         '
         'btnagregar
         '
@@ -156,10 +156,10 @@ Partial Class Unidades
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lblfiltro)
         Me.Controls.Add(Me.lbltitulo)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvunidades)
         Me.Name = "Unidades"
         Me.Text = "Unidades"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvunidades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbdatos.ResumeLayout(False)
         Me.gbdatos.PerformLayout()
         Me.gbacciones.ResumeLayout(False)
@@ -168,7 +168,7 @@ Partial Class Unidades
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvunidades As DataGridView
     Friend WithEvents btnagregar As Button
     Friend WithEvents btnactualizar As Button
     Friend WithEvents Label1 As Label

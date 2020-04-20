@@ -35,7 +35,7 @@ Partial Class TipoContrato
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chbmostrar = New System.Windows.Forms.CheckBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.lblcod = New System.Windows.Forms.Label()
         Me.gbdatos = New System.Windows.Forms.GroupBox()
@@ -51,6 +51,7 @@ Partial Class TipoContrato
         Me.dgvtipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvtipo.Location = New System.Drawing.Point(362, 106)
         Me.dgvtipo.Name = "dgvtipo"
+        Me.dgvtipo.ReadOnly = True
         Me.dgvtipo.Size = New System.Drawing.Size(286, 271)
         Me.dgvtipo.TabIndex = 0
         '
@@ -147,15 +148,15 @@ Partial Class TipoContrato
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Acciones"
         '
-        'CheckBox1
+        'chbmostrar
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(362, 75)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(89, 17)
-        Me.CheckBox1.TabIndex = 15
-        Me.CheckBox1.Text = "Mostrar Todo"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chbmostrar.AutoSize = True
+        Me.chbmostrar.Location = New System.Drawing.Point(362, 75)
+        Me.chbmostrar.Name = "chbmostrar"
+        Me.chbmostrar.Size = New System.Drawing.Size(89, 17)
+        Me.chbmostrar.TabIndex = 15
+        Me.chbmostrar.Text = "Mostrar Todo"
+        Me.chbmostrar.UseVisualStyleBackColor = True
         '
         'txtcod
         '
@@ -195,7 +196,7 @@ Partial Class TipoContrato
         Me.ClientSize = New System.Drawing.Size(685, 449)
         Me.ContextMenuStrip = Me.cmseliminar
         Me.Controls.Add(Me.gbdatos)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.chbmostrar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox1)
@@ -225,7 +226,7 @@ Partial Class TipoContrato
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents chbmostrar As CheckBox
     Friend WithEvents txtcod As TextBox
     Friend WithEvents lblcod As Label
     Friend WithEvents gbdatos As GroupBox

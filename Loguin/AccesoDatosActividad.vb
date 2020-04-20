@@ -53,7 +53,7 @@
         End With
         ctx.SaveChanges()
     End Sub
-
+    'deberia mostrar a todos por ende modificar el nombre add una T
     Shared Sub MostrarGridActividad(grid As DataGridView)
         Dim dato = (From s In ctx.Actividad
                     Select Actividad = s.descripcion, s.descripcion).ToList
@@ -61,10 +61,40 @@
         '  grid.Columns(0).Visible = False
 
     End Sub
+    'este tiene que mostrar solo los que estan dados de alta
+    Shared Sub MostrarGridActividadA(grid As DataGridView)
+        Dim dato = (From s In ctx.Actividad
+                    Where s.estadobaja = 0
+                    Select Actividad = s.descripcion, s.descripcion).ToList
+        grid.DataSource = dato
+        '  grid.Columns(0).Visible = False
 
+    End Sub
 
+    'Shared Function Existe(name As String) As Boolean
+    '    Dim result As Boolean
+    '    If (ctx.Actividad.Any()) Then
+    '        Dim ban = (From b In ctx.Actividad
+    '                   Where b.descripcion Like name
+    '                   Select b).SingleOrDefault
+    '        result = True
+    '    Else
+    '        result = False
 
+    '    End If
 
+    '    Return result
+
+    'End Function
+    Shared Function ExisteA(name As String) As Boolean
+        Dim result As Boolean = False
+        If ctx.Actividad.Any(Function(o) o.descripcion = name) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 
 
 
