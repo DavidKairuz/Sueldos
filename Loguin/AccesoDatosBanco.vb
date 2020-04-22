@@ -10,8 +10,6 @@
     End Sub
 
     Shared Sub MostrarBancosGrid(grid As DataGridView)
-
-
         Dim bank = (From b In ctx.Banco
                     Select b.id_banco, Nombre = b.nombre, Direccion = b.direccion, Telefono = b.telefono, Sucursal = b.sucursal_banco).ToList
 
@@ -78,18 +76,25 @@
                        Select b).SingleOrDefault
             result = True
 
-
             ' If ctx.Banco.Any(Function(o) o.id_banco = Id) Then
             'MsgBox("ya existe")
             'End If
 
         Else
             result = False
-
         End If
-
         Return result
 
     End Function
 
+
+    Shared Function Existe(name As String, anio As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Periodo.Any(Function(o) o.mes = name And o.año) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 End Class

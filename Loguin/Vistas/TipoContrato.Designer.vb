@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class TipoContrato
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class TipoContrato
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgvtipo = New System.Windows.Forms.DataGridView()
@@ -31,7 +31,6 @@ Partial Class TipoContrato
         Me.cmseliminar = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbltitulo = New System.Windows.Forms.Label()
-        Me.btneliminar = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -39,6 +38,7 @@ Partial Class TipoContrato
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.lblcod = New System.Windows.Forms.Label()
         Me.gbdatos = New System.Windows.Forms.GroupBox()
+        Me.btnalta = New System.Windows.Forms.Button()
         CType(Me.dgvtipo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmseliminar.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -47,8 +47,12 @@ Partial Class TipoContrato
         '
         'dgvtipo
         '
+        Me.dgvtipo.AllowUserToAddRows = False
+        Me.dgvtipo.AllowUserToDeleteRows = False
         Me.dgvtipo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvtipo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.dgvtipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvtipo.ContextMenuStrip = Me.cmseliminar
         Me.dgvtipo.Location = New System.Drawing.Point(362, 106)
         Me.dgvtipo.Name = "dgvtipo"
         Me.dgvtipo.ReadOnly = True
@@ -98,7 +102,7 @@ Partial Class TipoContrato
         'EliminarToolStripMenuItem
         '
         Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'lbltitulo
@@ -110,15 +114,6 @@ Partial Class TipoContrato
         Me.lbltitulo.Size = New System.Drawing.Size(142, 25)
         Me.lbltitulo.TabIndex = 10
         Me.lbltitulo.Text = "Tipo Contrato"
-        '
-        'btneliminar
-        '
-        Me.btneliminar.Location = New System.Drawing.Point(209, 30)
-        Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(64, 22)
-        Me.btneliminar.TabIndex = 6
-        Me.btneliminar.Text = "Eliminar"
-        Me.btneliminar.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -138,9 +133,9 @@ Partial Class TipoContrato
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btneliminar)
         Me.GroupBox1.Controls.Add(Me.btnactualizar)
         Me.GroupBox1.Controls.Add(Me.btnagregar)
+        Me.GroupBox1.Controls.Add(Me.btnalta)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 258)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(305, 71)
@@ -189,6 +184,15 @@ Partial Class TipoContrato
         Me.gbdatos.TabStop = False
         Me.gbdatos.Text = "Datos"
         '
+        'btnalta
+        '
+        Me.btnalta.Location = New System.Drawing.Point(210, 29)
+        Me.btnalta.Name = "btnalta"
+        Me.btnalta.Size = New System.Drawing.Size(75, 23)
+        Me.btnalta.TabIndex = 19
+        Me.btnalta.Text = "Alta"
+        Me.btnalta.UseVisualStyleBackColor = True
+        '
         'TipoContrato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,8 +217,6 @@ Partial Class TipoContrato
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents dgvtipo As DataGridView
     Friend WithEvents btnagregar As Button
     Friend WithEvents btnactualizar As Button
     Friend WithEvents lblnombre As Label
@@ -222,7 +224,6 @@ Partial Class TipoContrato
     Friend WithEvents cmseliminar As ContextMenuStrip
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lbltitulo As Label
-    Friend WithEvents btneliminar As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
@@ -230,4 +231,6 @@ Partial Class TipoContrato
     Friend WithEvents txtcod As TextBox
     Friend WithEvents lblcod As Label
     Friend WithEvents gbdatos As GroupBox
+    Friend WithEvents btnalta As Button
+    Friend WithEvents dgvtipo As DataGridView
 End Class

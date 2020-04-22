@@ -74,13 +74,6 @@
 
     Shared Function Existe(name As String) As Boolean
         Dim result As Boolean = False
-        '  Not context.Employees.Any (c => c.PayrollNumber = PropertyToCheck)
-        'If (context.MyEntity.Any(o >= o.Id <> idToMAtch)) Then
-        'If (ctx.Convenio.Any()) Then
-        '    Dim ban = (From b In ctx.Convenio
-        '               Where b.descripcion = name
-        '               Select b).SingleOrDefault
-        '    result = True
         If ctx.Convenio.Any(Function(o) o.descripcion = name) Then
             result = True
 

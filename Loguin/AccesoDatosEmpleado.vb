@@ -48,7 +48,7 @@
 
         ctx.SaveChanges()
     End Sub
-    Shared Sub MostrarGridEmpleados(grid As DataGridView)
+    Shared Sub MostrarGridEmpleadosT(grid As DataGridView)
         Dim dato = (From s In ctx.Empleado
                     Select s).ToList
         grid.DataSource = dato
@@ -56,4 +56,23 @@
 
     End Sub
 
+    Shared Sub MostrarGridEmpleadosA(grid As DataGridView)
+        Dim dato = (From s In ctx.Empleado
+                    Where s.estadobaja = 0
+                    Select s).ToList
+        grid.DataSource = dato
+        grid.Columns(0).Visible = False
+
+    End Sub
+
+
+    Shared Function Existe(name As String) As Boolean
+        Dim result As Boolean = False
+        If ctx.Unidad.Any(Function(o) o.descripcion = name) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 End Class

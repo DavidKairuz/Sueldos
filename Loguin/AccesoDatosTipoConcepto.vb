@@ -52,6 +52,14 @@
 
     End Function
 
-
+    Shared Function Existe(name As String) As Boolean
+        Dim result As Boolean = False
+        If ctx.Unidad.Any(Function(o) o.descripcion = name) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 
 End Class

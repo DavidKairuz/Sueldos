@@ -87,6 +87,7 @@
     <Compile Include="AccesoDatosConvenio.vb" />
     <Compile Include="AccesoDatosEmpleado.vb" />
     <Compile Include="AccesoDatosLocalidad.vb" />
+    <Compile Include="AccesoDatosObraSocial.vb" />
     <Compile Include="AccesoDatosPeriodo.vb" />
     <Compile Include="AccesoDatosSueldo.vb" />
     <Compile Include="AccesoDatosTContrato.vb" />

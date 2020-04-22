@@ -21,4 +21,14 @@
         grid.DataSource = per
 
     End Sub
+
+    Shared Function Existe(name As String, anio As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Periodo.Any(Function(o) o.mes = name And o.año) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 End Class

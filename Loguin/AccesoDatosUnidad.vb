@@ -34,6 +34,15 @@
         uni.estadobaja = 1
         ctx.SaveChanges()
     End Sub
+
+    Shared Sub Daralta(id As Integer)
+        Dim uni = (From u In ctx.Unidad
+                   Where u.id_unidad = id
+                   Select u).SingleOrDefault
+
+        uni.estadobaja = 0
+        ctx.SaveChanges()
+    End Sub
     Shared Function Existe(name As String) As Boolean
         Dim result As Boolean = False
         If ctx.Unidad.Any(Function(o) o.descripcion = name) Then

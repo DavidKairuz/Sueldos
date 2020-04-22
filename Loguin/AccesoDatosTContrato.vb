@@ -22,6 +22,14 @@
         ctx.SaveChanges()
     End Sub
 
+    Shared Sub DarAlta(id As Integer)
+        Dim tp = (From t In ctx.Tipo_Contrato
+                  Where t.id_tipoContrato = id
+                  Select t).SingleOrDefault
+        tp.estadobaja = 0
+        ctx.SaveChanges()
+    End Sub
+
     Shared Function ExisteTipoContrato(name As String) As Boolean
         Dim result As Boolean
 

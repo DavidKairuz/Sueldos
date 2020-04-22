@@ -22,6 +22,7 @@ Partial Class Unidades
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.dgvunidades = New System.Windows.Forms.DataGridView()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.btnactualizar = New System.Windows.Forms.Button()
@@ -34,17 +35,22 @@ Partial Class Unidades
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.gbdatos = New System.Windows.Forms.GroupBox()
         Me.gbacciones = New System.Windows.Forms.GroupBox()
+        Me.btnalta = New System.Windows.Forms.Button()
+        Me.cmseliminar = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.dgvunidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbdatos.SuspendLayout()
         Me.gbacciones.SuspendLayout()
+        Me.cmseliminar.SuspendLayout()
         Me.SuspendLayout()
         '
         'dgvunidades
         '
         Me.dgvunidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvunidades.Location = New System.Drawing.Point(243, 78)
+        Me.dgvunidades.Location = New System.Drawing.Point(358, 78)
         Me.dgvunidades.Name = "dgvunidades"
-        Me.dgvunidades.Size = New System.Drawing.Size(240, 227)
+        Me.dgvunidades.Size = New System.Drawing.Size(262, 250)
         Me.dgvunidades.TabIndex = 0
         '
         'btnagregar
@@ -86,7 +92,7 @@ Partial Class Unidades
         'lbltitulo
         '
         Me.lbltitulo.AutoSize = True
-        Me.lbltitulo.Location = New System.Drawing.Point(212, 9)
+        Me.lbltitulo.Location = New System.Drawing.Point(277, 9)
         Me.lbltitulo.Name = "lbltitulo"
         Me.lbltitulo.Size = New System.Drawing.Size(52, 13)
         Me.lbltitulo.TabIndex = 5
@@ -95,7 +101,7 @@ Partial Class Unidades
         'lblfiltro
         '
         Me.lblfiltro.AutoSize = True
-        Me.lblfiltro.Location = New System.Drawing.Point(272, 43)
+        Me.lblfiltro.Location = New System.Drawing.Point(366, 55)
         Me.lblfiltro.Name = "lblfiltro"
         Me.lblfiltro.Size = New System.Drawing.Size(40, 13)
         Me.lblfiltro.TabIndex = 6
@@ -103,9 +109,9 @@ Partial Class Unidades
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(358, 43)
+        Me.TextBox1.Location = New System.Drawing.Point(424, 52)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(141, 20)
         Me.TextBox1.TabIndex = 7
         '
         'txtcod
@@ -137,20 +143,53 @@ Partial Class Unidades
         '
         'gbacciones
         '
+        Me.gbacciones.Controls.Add(Me.btnalta)
         Me.gbacciones.Controls.Add(Me.btnagregar)
         Me.gbacciones.Controls.Add(Me.btnactualizar)
         Me.gbacciones.Location = New System.Drawing.Point(28, 216)
         Me.gbacciones.Name = "gbacciones"
-        Me.gbacciones.Size = New System.Drawing.Size(200, 71)
+        Me.gbacciones.Size = New System.Drawing.Size(286, 69)
         Me.gbacciones.TabIndex = 11
         Me.gbacciones.TabStop = False
         Me.gbacciones.Text = "Acciones"
+        '
+        'btnalta
+        '
+        Me.btnalta.Location = New System.Drawing.Point(205, 28)
+        Me.btnalta.Name = "btnalta"
+        Me.btnalta.Size = New System.Drawing.Size(75, 23)
+        Me.btnalta.TabIndex = 3
+        Me.btnalta.Text = "Alta"
+        Me.btnalta.UseVisualStyleBackColor = True
+        '
+        'cmseliminar
+        '
+        Me.cmseliminar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem})
+        Me.cmseliminar.Name = "cmseliminar"
+        Me.cmseliminar.Size = New System.Drawing.Size(118, 26)
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(358, 334)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(89, 17)
+        Me.CheckBox1.TabIndex = 13
+        Me.CheckBox1.Text = "Mostrar Todo"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Unidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(495, 333)
+        Me.ClientSize = New System.Drawing.Size(655, 377)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.gbacciones)
         Me.Controls.Add(Me.gbdatos)
         Me.Controls.Add(Me.TextBox1)
@@ -163,6 +202,7 @@ Partial Class Unidades
         Me.gbdatos.ResumeLayout(False)
         Me.gbdatos.PerformLayout()
         Me.gbacciones.ResumeLayout(False)
+        Me.cmseliminar.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -180,4 +220,8 @@ Partial Class Unidades
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents gbdatos As GroupBox
     Friend WithEvents gbacciones As GroupBox
+    Friend WithEvents cmseliminar As ContextMenuStrip
+    Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnalta As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class

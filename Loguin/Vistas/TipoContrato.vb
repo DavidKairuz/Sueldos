@@ -67,28 +67,8 @@
         txtcod.Clear()
     End Sub
 
-    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
-        Try
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs)
 
-            If validacion.DatagridVacio(dgvtipo) = True Then
-                MsgBox("No hay registros para eliminar", MsgBoxStyle.Exclamation, "Atencion")
-            Else
-                If MsgBox("Seguro desea Eliminar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
-
-                    Dim ide = dgvtipo.CurrentRow().Cells(0).Value
-                    AccesoDatosTContrato.EliminarTipoContrato(ide)
-                    AccesoDatosTContrato.MostrarTipoContrato(dgvtipo)
-                    MsgBox("Registro eliminado con exito", MsgBoxStyle.Information, "Eliminacion")
-                    Limpiar()
-                Else
-                    MsgBox("Operacion cancelada", MsgBoxStyle.Critical, "Cancelacion")
-                    Limpiar()
-                End If
-
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
 
     Private Sub dgvtipo_DoubleClick(sender As Object, e As EventArgs) Handles dgvtipo.DoubleClick
@@ -137,4 +117,76 @@
     End Sub
 
 
+
+
+
+    Private Sub btnalta_Click(sender As Object, e As EventArgs) Handles btnalta.Click
+        Dim ide = dgvtipo.CurrentRow().Cells(0).Value
+        If validacion.DatagridVacio(dgvtipo) Then
+            MsgBox("No hay regitros para dar de alta", MsgBoxStyle.Critical, "Error")
+        Else
+            If dgvtipo.CurrentRow.Cells(2).Value = True Then
+                AccesoDatosTContrato.DarAlta(ide)
+                MsgBox("Se Actualizo el estado del registro exitosamente", MsgBoxStyle.Information, "Alta de registro")
+                mostrargrid()
+            End If
+        End If
+        '  Dim id As Integer = dgvtipo.CurrentRow().Cells(0).Value
+        ' valorcolumna(dgvtipo, id)
+    End Sub
+
+
+    'Public Sub AltaRegistro(grid As DataGridView, btn As Button)
+    '    Dim valida As Validar = New Validar
+    '    Dim id = grid.CurrentRow.Cells(0).Value
+    '    If valida.DatagridVacio(grid) Then
+    '        MsgBox("No hay regitros para eliminar", MsgBoxStyle.Critical, "Error")
+    '    Else
+    '        valorcolumna(grid, id)
+    '    End If
+    'End Sub
+
+
+    'Public Function valorcolumna(grid As DataGridView, id As Integer) As Integer
+    '    Dim result As Integer
+    '    For i As Integer = 0 To grid.ColumnCount
+    '        If grid.ColumnHeadersVisible = "estadobaja" Then
+
+    '            result = i
+
+    '        Else
+    '            result = -1
+    '        End If
+    '    Next
+    '    Return result
+    '    MsgBox("el estado esta en :" & result)
+    'End Function
+
+    Private Sub dgvtipo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvtipo.CellContentClick
+
+    End Sub
+
+    Private Sub EliminarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarToolStripMenuItem.Click
+        Try
+
+            If validacion.DatagridVacio(dgvtipo) = True Then
+                MsgBox("No hay registros para eliminar", MsgBoxStyle.Exclamation, "Atencion")
+            Else
+                If MsgBox("Seguro desea Eliminar este Registro?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirmar") = MsgBoxResult.Yes Then
+
+                    Dim ide = dgvtipo.CurrentRow().Cells(0).Value
+                    AccesoDatosTContrato.EliminarTipoContrato(ide)
+                    AccesoDatosTContrato.MostrarTipoContrato(dgvtipo)
+                    MsgBox("Registro eliminado con exito", MsgBoxStyle.Information, "Eliminacion")
+                    Limpiar()
+                Else
+                    MsgBox("Operacion cancelada", MsgBoxStyle.Critical, "Cancelacion")
+                    Limpiar()
+                End If
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

@@ -53,4 +53,14 @@
     End Sub
 
 
+
+    Shared Function Existe(name As String, idp As Integer) As Boolean
+        Dim result As Boolean = False
+        If ctx.Localidad.Any(Function(o) o.descripcion = name And o.id_provincia = idp) Then
+            result = True
+        Else
+            result = False
+        End If
+        Return result
+    End Function
 End Class
