@@ -1,4 +1,5 @@
-﻿Public Class TipoContrato
+﻿Imports System.Data.Linq.SqlClient
+Public Class TipoContrato
 
     Shared AccesoDatosTContrato As New AccesoDatosTContrato
     Shared validacion As Validar = New Validar
@@ -8,7 +9,7 @@
 
 
     Sub mostrargrid()
-        AccesoDatosTContrato.mostrartipocontrato(dgvtipo)
+        AccesoDatosTContrato.MostrarTipoContrato(dgvtipo)
     End Sub
     Private Sub cmseliminar_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmseliminar.Opening
 
@@ -188,5 +189,20 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
+        AccesoDatosTContrato.Filtrar(txtfiltro.Text, dgvtipo)
+    End Sub
+
+
+    Sub Filtrar()
+        Dim buscar As New DataView()
+        buscar.RowFilter = "descripcion  Like'%" & txtdescripcion.Text & "%'"
+        dgvtipo.DataSource = vbNull
+        dgvtipo.DataSource = buscar.ToTable
+
+
+
     End Sub
 End Class

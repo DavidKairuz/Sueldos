@@ -24,21 +24,21 @@ Partial Class TipoContrato
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgvtipo = New System.Windows.Forms.DataGridView()
+        Me.cmseliminar = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.btnactualizar = New System.Windows.Forms.Button()
         Me.lblnombre = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
-        Me.cmseliminar = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbltitulo = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtfiltro = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnalta = New System.Windows.Forms.Button()
         Me.chbmostrar = New System.Windows.Forms.CheckBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.lblcod = New System.Windows.Forms.Label()
         Me.gbdatos = New System.Windows.Forms.GroupBox()
-        Me.btnalta = New System.Windows.Forms.Button()
         CType(Me.dgvtipo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cmseliminar.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -58,6 +58,18 @@ Partial Class TipoContrato
         Me.dgvtipo.ReadOnly = True
         Me.dgvtipo.Size = New System.Drawing.Size(286, 271)
         Me.dgvtipo.TabIndex = 0
+        '
+        'cmseliminar
+        '
+        Me.cmseliminar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem})
+        Me.cmseliminar.Name = "cmseliminar"
+        Me.cmseliminar.Size = New System.Drawing.Size(118, 26)
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
         'btnagregar
         '
@@ -93,18 +105,6 @@ Partial Class TipoContrato
         Me.txtdescripcion.Size = New System.Drawing.Size(199, 20)
         Me.txtdescripcion.TabIndex = 2
         '
-        'cmseliminar
-        '
-        Me.cmseliminar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EliminarToolStripMenuItem})
-        Me.cmseliminar.Name = "cmseliminar"
-        Me.cmseliminar.Size = New System.Drawing.Size(118, 26)
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
         'lbltitulo
         '
         Me.lbltitulo.AutoSize = True
@@ -115,12 +115,12 @@ Partial Class TipoContrato
         Me.lbltitulo.TabIndex = 10
         Me.lbltitulo.Text = "Tipo Contrato"
         '
-        'TextBox1
+        'txtfiltro
         '
-        Me.TextBox1.Location = New System.Drawing.Point(517, 72)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(131, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.txtfiltro.Location = New System.Drawing.Point(517, 72)
+        Me.txtfiltro.Name = "txtfiltro"
+        Me.txtfiltro.Size = New System.Drawing.Size(131, 20)
+        Me.txtfiltro.TabIndex = 3
         '
         'Label2
         '
@@ -142,6 +142,15 @@ Partial Class TipoContrato
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Acciones"
+        '
+        'btnalta
+        '
+        Me.btnalta.Location = New System.Drawing.Point(210, 29)
+        Me.btnalta.Name = "btnalta"
+        Me.btnalta.Size = New System.Drawing.Size(75, 23)
+        Me.btnalta.TabIndex = 19
+        Me.btnalta.Text = "Alta"
+        Me.btnalta.UseVisualStyleBackColor = True
         '
         'chbmostrar
         '
@@ -184,15 +193,6 @@ Partial Class TipoContrato
         Me.gbdatos.TabStop = False
         Me.gbdatos.Text = "Datos"
         '
-        'btnalta
-        '
-        Me.btnalta.Location = New System.Drawing.Point(210, 29)
-        Me.btnalta.Name = "btnalta"
-        Me.btnalta.Size = New System.Drawing.Size(75, 23)
-        Me.btnalta.TabIndex = 19
-        Me.btnalta.Text = "Alta"
-        Me.btnalta.UseVisualStyleBackColor = True
-        '
         'TipoContrato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,7 +203,7 @@ Partial Class TipoContrato
         Me.Controls.Add(Me.chbmostrar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.lbltitulo)
         Me.Controls.Add(Me.dgvtipo)
         Me.Name = "TipoContrato"
@@ -224,7 +224,7 @@ Partial Class TipoContrato
     Friend WithEvents cmseliminar As ContextMenuStrip
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lbltitulo As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtfiltro As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents chbmostrar As CheckBox

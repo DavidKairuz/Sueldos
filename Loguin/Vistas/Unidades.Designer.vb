@@ -30,7 +30,7 @@ Partial Class Unidades
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbltitulo = New System.Windows.Forms.Label()
         Me.lblfiltro = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtfiltro = New System.Windows.Forms.TextBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.gbdatos = New System.Windows.Forms.GroupBox()
@@ -107,12 +107,12 @@ Partial Class Unidades
         Me.lblfiltro.TabIndex = 6
         Me.lblfiltro.Text = "Buscar"
         '
-        'TextBox1
+        'txtfiltro
         '
-        Me.TextBox1.Location = New System.Drawing.Point(424, 52)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(141, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.txtfiltro.Location = New System.Drawing.Point(424, 52)
+        Me.txtfiltro.Name = "txtfiltro"
+        Me.txtfiltro.Size = New System.Drawing.Size(141, 20)
+        Me.txtfiltro.TabIndex = 7
         '
         'txtcod
         '
@@ -192,7 +192,7 @@ Partial Class Unidades
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.gbacciones)
         Me.Controls.Add(Me.gbdatos)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtfiltro)
         Me.Controls.Add(Me.lblfiltro)
         Me.Controls.Add(Me.lbltitulo)
         Me.Controls.Add(Me.dgvunidades)
@@ -215,7 +215,7 @@ Partial Class Unidades
     Friend WithEvents Label2 As Label
     Friend WithEvents lbltitulo As Label
     Friend WithEvents lblfiltro As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtfiltro As TextBox
     Friend WithEvents txtcod As TextBox
     Friend WithEvents txtnombre As TextBox
     Friend WithEvents gbdatos As GroupBox

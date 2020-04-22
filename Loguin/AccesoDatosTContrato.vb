@@ -1,4 +1,5 @@
-﻿Public Class AccesoDatosTContrato
+﻿Imports System.Data.Linq.SqlClient
+Public Class AccesoDatosTContrato
     Shared ctx As New LiquidSueldosEntities
     ' Dim Tc = New Tipo_Contrato()
 
@@ -45,6 +46,14 @@
         End If
         Return result
     End Function
+
+    Shared Sub Filtrar(name As String, grid As DataGridView)
+        Dim tipo = (From c In ctx.Tipo_Contrato
+                    Where c.descripcion Like name
+                    Select c).ToList
+        grid.DataSource = tipo
+
+    End Sub
 
     Shared Function Existe(name As String) As Boolean
         Dim result As Boolean = False

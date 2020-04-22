@@ -93,4 +93,8 @@
     Private Sub btnactualizar_Click(sender As Object, e As EventArgs) Handles btnactualizar.Click
 
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
+
+    End Sub
 End Class
