@@ -39,6 +39,9 @@ Partial Class Unidades
         Me.cmseliminar = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.dgvunidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbdatos.SuspendLayout()
         Me.gbacciones.SuspendLayout()
@@ -47,10 +50,15 @@ Partial Class Unidades
         '
         'dgvunidades
         '
+        Me.dgvunidades.AllowUserToAddRows = False
+        Me.dgvunidades.AllowUserToDeleteRows = False
         Me.dgvunidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvunidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.estado})
         Me.dgvunidades.Location = New System.Drawing.Point(358, 78)
         Me.dgvunidades.Name = "dgvunidades"
-        Me.dgvunidades.Size = New System.Drawing.Size(262, 250)
+        Me.dgvunidades.ReadOnly = True
+        Me.dgvunidades.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.dgvunidades.Size = New System.Drawing.Size(362, 250)
         Me.dgvunidades.TabIndex = 0
         '
         'btnagregar
@@ -184,11 +192,31 @@ Partial Class Unidades
         Me.CheckBox1.Text = "Mostrar Todo"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
+        Me.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'estado
+        '
+        Me.estado.HeaderText = "Estado Activo"
+        Me.estado.Name = "estado"
+        Me.estado.ReadOnly = True
+        '
         'Unidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(655, 377)
+        Me.ClientSize = New System.Drawing.Size(836, 377)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.gbacciones)
         Me.Controls.Add(Me.gbdatos)
@@ -224,4 +252,7 @@ Partial Class Unidades
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnalta As Button
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents codigo As DataGridViewTextBoxColumn
+    Friend WithEvents nombre As DataGridViewTextBoxColumn
+    Friend WithEvents estado As DataGridViewCheckBoxColumn
 End Class

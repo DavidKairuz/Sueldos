@@ -69,4 +69,12 @@
 
     End Sub
 
+
+    Sub Filtra(txt As TextBox, dgv As DataGridView)
+        Dim tipo As List(Of Unidad) = (From c In ctx.Unidad
+                                       Where c.descripcion.StartsWith(txt.Text)
+                                       Select c).ToList
+        dgv.DataSource = tipo
+
+    End Sub
 End Class

@@ -97,4 +97,8 @@
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
 
     End Sub
+
+    Private Sub dgvunidades_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvunidades.CellContentClick
+
+    End Sub
 End Class

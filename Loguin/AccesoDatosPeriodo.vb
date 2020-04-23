@@ -31,4 +31,12 @@
         End If
         Return result
     End Function
+
+    Sub Filtra(txt As TextBox, dgv As DataGridView)
+        Dim tipo As List(Of Periodo) = (From c In ctx.Periodo
+                                        Where c.mes.StartsWith(txt.Text)
+                                        Select c).ToList
+        dgv.DataSource = tipo
+
+    End Sub
 End Class

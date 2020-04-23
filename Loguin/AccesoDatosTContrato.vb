@@ -72,4 +72,7 @@ Public Class AccesoDatosTContrato
                      Select c).ToString
     End Sub
 
+
+
+
 End Class
