@@ -192,17 +192,9 @@ Public Class TipoContrato
     End Sub
 
     Private Sub txtfiltro_TextChanged(sender As Object, e As EventArgs) Handles txtfiltro.TextChanged
-        AccesoDatosTContrato.Filtrar(txtfiltro.Text, dgvtipo)
+        AccesoDatosTContrato.Filtra(txtfiltro, dgvtipo)
     End Sub
 
 
-    Sub Filtrar()
-        Dim buscar As New DataView()
-        buscar.RowFilter = "descripcion  Like'%" & txtdescripcion.Text & "%'"
-        dgvtipo.DataSource = vbNull
-        dgvtipo.DataSource = buscar.ToTable
 
-
-
-    End Sub
 End Class

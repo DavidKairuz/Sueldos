@@ -1,4 +1,4 @@
-﻿Imports System.Data.Linq.SqlClient
+﻿'Imports System.Data.Linq.SqlClient
 Public Class AccesoDatosTContrato
     Shared ctx As New LiquidSueldosEntities
     ' Dim Tc = New Tipo_Contrato()
@@ -47,11 +47,12 @@ Public Class AccesoDatosTContrato
         Return result
     End Function
 
-    Shared Sub Filtrar(name As String, grid As DataGridView)
-        Dim tipo = (From c In ctx.Tipo_Contrato
-                    Where c.descripcion Like name
-                    Select c).ToList
-        grid.DataSource = tipo
+
+    Sub Filtra(txt As TextBox, dgv As DataGridView)
+        Dim tipo As List(Of Tipo_Contrato) = (From c In ctx.Tipo_Contrato
+                                              Where c.descripcion.StartsWith(txt.Text)
+                                              Select c).ToList
+        dgv.DataSource = tipo
 
     End Sub
 
