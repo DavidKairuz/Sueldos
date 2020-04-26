@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Unidades
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Unidades
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.dgvunidades = New System.Windows.Forms.DataGridView()
@@ -38,10 +38,7 @@ Partial Class Unidades
         Me.btnalta = New System.Windows.Forms.Button()
         Me.cmseliminar = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estado = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.chbmostrart = New System.Windows.Forms.CheckBox()
         CType(Me.dgvunidades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbdatos.SuspendLayout()
         Me.gbacciones.SuspendLayout()
@@ -52,11 +49,11 @@ Partial Class Unidades
         '
         Me.dgvunidades.AllowUserToAddRows = False
         Me.dgvunidades.AllowUserToDeleteRows = False
+        Me.dgvunidades.AllowUserToResizeColumns = False
+        Me.dgvunidades.AllowUserToResizeRows = False
         Me.dgvunidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvunidades.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.estado})
         Me.dgvunidades.Location = New System.Drawing.Point(358, 78)
         Me.dgvunidades.Name = "dgvunidades"
-        Me.dgvunidades.ReadOnly = True
         Me.dgvunidades.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.dgvunidades.Size = New System.Drawing.Size(362, 250)
         Me.dgvunidades.TabIndex = 0
@@ -100,7 +97,7 @@ Partial Class Unidades
         'lbltitulo
         '
         Me.lbltitulo.AutoSize = True
-        Me.lbltitulo.Location = New System.Drawing.Point(277, 9)
+        Me.lbltitulo.Location = New System.Drawing.Point(324, 9)
         Me.lbltitulo.Name = "lbltitulo"
         Me.lbltitulo.Size = New System.Drawing.Size(52, 13)
         Me.lbltitulo.TabIndex = 5
@@ -182,42 +179,23 @@ Partial Class Unidades
         Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.EliminarToolStripMenuItem.Text = "Eliminar"
         '
-        'CheckBox1
+        'chbmostrart
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(358, 334)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(89, 17)
-        Me.CheckBox1.TabIndex = 13
-        Me.CheckBox1.Text = "Mostrar Todo"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        Me.nombre.ReadOnly = True
-        Me.nombre.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'estado
-        '
-        Me.estado.HeaderText = "Estado Activo"
-        Me.estado.Name = "estado"
-        Me.estado.ReadOnly = True
+        Me.chbmostrart.AutoSize = True
+        Me.chbmostrart.Location = New System.Drawing.Point(358, 338)
+        Me.chbmostrart.Name = "chbmostrart"
+        Me.chbmostrart.Size = New System.Drawing.Size(89, 17)
+        Me.chbmostrart.TabIndex = 13
+        Me.chbmostrart.Text = "Mostrar Todo"
+        Me.chbmostrart.UseVisualStyleBackColor = True
         '
         'Unidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(836, 377)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.ContextMenuStrip = Me.cmseliminar
+        Me.Controls.Add(Me.chbmostrart)
         Me.Controls.Add(Me.gbacciones)
         Me.Controls.Add(Me.gbdatos)
         Me.Controls.Add(Me.txtfiltro)
@@ -251,8 +229,5 @@ Partial Class Unidades
     Friend WithEvents cmseliminar As ContextMenuStrip
     Friend WithEvents EliminarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnalta As Button
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents codigo As DataGridViewTextBoxColumn
-    Friend WithEvents nombre As DataGridViewTextBoxColumn
-    Friend WithEvents estado As DataGridViewCheckBoxColumn
+    Friend WithEvents chbmostrart As CheckBox
 End Class

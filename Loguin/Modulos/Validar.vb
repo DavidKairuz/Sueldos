@@ -151,4 +151,92 @@ Public Class Validar
         End If
         Return result
     End Function
+
+    'agrega una columna del tipo checkbox en cualquier datagrid tener readonly en false
+    Shared Sub AddEBdgv(dgv As DataGridView)
+        Dim cc As DataGridViewCheckBoxColumn
+        Dim k As Integer = dgv.ColumnCount
+        For j = 0 To dgv.ColumnCount
+            If j = dgv.ColumnCount Then
+                cc = New DataGridViewCheckBoxColumn
+                cc.Name = "Estadobaja"
+                cc.HeaderText = "Estado baja"
+                dgv.Columns.Insert(k, cc)
+
+            End If
+        Next
+    End Sub
+
+    'Shared Sub VerificarCheckDGV(dgv As DataGridView)
+    '    Dim j As Integer
+    '    j = dgv.ColumnCount
+    '    For i = 0 To dgv.RowCount - 1
+    '        If CBool(dgv.Rows(i).Cells(j).Value) = True Then
+
+    '        End If
+    '    Next
+    'End Sub
+    ' Shared Sub agregarchboxadgv()
+    'Dim eb As New DataGridViewCheckBoxColumn
+    'eb.HeaderText = "Activo"
+    'eb.Name = "estado"
+    'dgvunidades.Columns.Insert(dgvunidades.Columns.Count, eb)
+    '   End Sub
+
+
+
+    Shared Sub configuraDGV(dgv As DataGridView)
+        dgv.AutoResizeColumns()
+        dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgv.AutoResizeRows()
+        dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+    End Sub
+
+
+    'Shared Sub RemplazoColumnadgv(dgv As DataGridView)
+    '    Dim cc As DataGridViewCheckBoxColumn
+    '    ' Dim cv As DataGridViewTextBoxColumn
+
+    '    For Each column As DataGridViewColumn In dgv.Columns
+    '        If column.HeaderText = "estadobaja" Then
+    '            '   IndiceFor = column.Index
+    '            cc = New DataGridViewCheckBoxColumn
+    '            cc.Name = "Estadobaja"
+    '            cc.HeaderText = "Estado baja"
+    '            dgv.Columns.Add(cc)
+    '        Else
+    '            MsgBox("No se encontro la columna")
+    '        End If
+    '        Exit For
+    '    Next
+    'End Sub
+    Function indiceCE(dgv As DataGridView) As Integer
+        Dim index As Integer
+        If dgv.RowCount > 0 Then
+            index = dgv.ColumnCount
+        Else
+            index = 0
+        End If
+
+        Return index
+    End Function
+
+    'Shared Sub cargarDGtodos(dgv As DataGridView)
+    '    Try
+    '        Dim y As Integer = dgv.ColumnCount
+
+    '        Dim row As DataGridViewRow
+    '        For Each row In dgv.Rows
+    '            If row.Cells(y).Value = True Then
+    '                row.DefaultCellStyle.BackColor = Color.Red
+    '            Else
+    '                row.DefaultCellStyle.BackColor = Color.Green
+    '            End If
+    '        Next
+    '        dgv.Columns(y).Visible = False
+    '    Catch ex As Exception
+
+    '    End Try
+
+    'End Sub
 End Class

@@ -12,15 +12,14 @@
     'muestra todos los registros
     Shared Sub MostrarUnidadesT(dgv As DataGridView)
         Dim uni = (From u In ctx.Unidad
-                   Select u).ToList
+                   Select Codigo = u.id_unidad, Descripcion = u.descripcion, Estado = u.estadobaja).ToList
         dgv.DataSource = uni
-
     End Sub
     'muestra los registros que estan activos
     Shared Sub MostrarUnidadesA(dgv As DataGridView)
         Dim uni = (From u In ctx.Unidad
                    Where u.estadobaja = 0
-                   Select u).ToList
+                   Select Codigo = u.id_unidad, Descripcion = u.descripcion, Estado = u.estadobaja).ToList
 
         dgv.DataSource = uni
 
@@ -34,7 +33,21 @@
         uni.estadobaja = 1
         ctx.SaveChanges()
     End Sub
+    'obtiene el estado del registro para comparar si este ya esta de alta o no
+    Shared Function ConsultaEstado(id As Integer) As Boolean
+        Dim res As Boolean
+        Dim uni = (From u In ctx.Unidad
+                   Where u.id_unidad = id And u.estadobaja = True
+                   Select u).First().estadobaja
+        Dim estado = CBool(uni.ToString)
 
+        If estado = True Then
+            res = True
+        Else
+            res = False
+        End If
+        Return res
+    End Function
     Shared Sub Daralta(id As Integer)
         Dim uni = (From u In ctx.Unidad
                    Where u.id_unidad = id
